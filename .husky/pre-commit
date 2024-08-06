@@ -1,4 +1,6 @@
 yarn audit
+yarn format
 yarn lint
 yarn lint:ejs
+yarn types:check
 yarn test:cov

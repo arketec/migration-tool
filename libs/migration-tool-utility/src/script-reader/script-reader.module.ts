@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { FilesystemModule } from '../filesystem/filesystem.module';
+import { FilesystemModule } from '../../../../src/filesystem/filesystem.module';
 import { ScriptReaderJsModule } from '../script-reader-js/script-reader-js.module';
 import { ScriptReaderJsonModule } from '../script-reader-json/script-reader-json.module';
 import { ScriptReaderTsModule } from '../script-reader-ts/script-reader-ts.module';
