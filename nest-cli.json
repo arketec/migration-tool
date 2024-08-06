@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true
+  },
+  "monorepo": true,
+  "defaultLibraryPrefix": "@mtool",
+  "projects": {
+    "migration-tool-conductor": {
+      "type": "library",
+      "root": "libs/migration-tool-conductor",
+      "entryFile": "index",
+      "sourceRoot": "libs/migration-tool-conductor/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/migration-tool-conductor/tsconfig.lib.json"
+      }
+    },
+    "migration-tool-consul": {
+      "type": "library",
+      "root": "libs/migration-tool-consul",
+      "entryFile": "index",
+      "sourceRoot": "libs/migration-tool-consul/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/migration-tool-consul/tsconfig.lib.json"
+      }
+    },
+    "migration-tool-mongodb": {
+      "type": "library",
+      "root": "libs/migration-tool-mongodb",
+      "entryFile": "index",
+      "sourceRoot": "libs/migration-tool-mongodb/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/migration-tool-mongodb/tsconfig.lib.json"
+      }
+    },
+    "migration-tool-vault": {
+      "type": "library",
+      "root": "libs/migration-tool-vault",
+      "entryFile": "index",
+      "sourceRoot": "libs/migration-tool-vault/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/migration-tool-vault/tsconfig.lib.json"
+      }
+    },
+    "migration-tracking": {
+      "type": "library",
+      "root": "libs/migration-tracking",
+      "entryFile": "index",
+      "sourceRoot": "libs/migration-tracking/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/migration-tracking/tsconfig.lib.json"
+      }
+    },
+    "migration-tracking-mongodb": {
+      "type": "library",
+      "root": "libs/migration-tracking-mongodb",
+      "entryFile": "index",
+      "sourceRoot": "libs/migration-tracking-mongodb/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/migration-tracking-mongodb/tsconfig.lib.json"
+      }
+    },
+    "migration-tool-common": {
+      "type": "library",
+      "root": "libs/migration-tool-common",
+      "entryFile": "index",
+      "sourceRoot": "libs/migration-tool-common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/migration-tool-common/tsconfig.lib.json"
+      }
+    },
+    "migration-tracking-common": {
+      "type": "library",
+      "root": "libs/migration-tracking-common",
+      "entryFile": "index",
+      "sourceRoot": "libs/migration-tracking-common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/migration-tracking-common/tsconfig.lib.json"
+      }
+    },
+    "migration-tool-utility": {
+      "type": "library",
+      "root": "libs/migration-tool-utility",
+      "entryFile": "index",
+      "sourceRoot": "libs/migration-tool-utility/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/migration-tool-utility/tsconfig.lib.json"
+      }
+    }
+  }
+}

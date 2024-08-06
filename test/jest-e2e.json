@@ -1,0 +1,39 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@mtool/migration-tool-conductor/(.*)": "<rootDir>/../libs/migration-tool-conductor/src/$1",
+    "@mtool/migration-tool-conductor": "<rootDir>/../libs/migration-tool-conductor/src",
+    "@mtool/migration-tool-consul/(.*)": "<rootDir>/../libs/migration-tool-consul/src/$1",
+    "@mtool/migration-tool-consul": "<rootDir>/../libs/migration-tool-consul/src",
+    "@mtool/migration-tool-mongodb/(.*)": "<rootDir>/../libs/migration-tool-mongodb/src/$1",
+    "@mtool/migration-tool-mongodb": "<rootDir>/../libs/migration-tool-mongodb/src",
+    "@mtool/migration-tool-vault/(.*)": "<rootDir>/../libs/migration-tool-vault/src/$1",
+    "@mtool/migration-tool-vault": "<rootDir>/../libs/migration-tool-vault/src",
+    "@mtool/migration-tracking/(.*)": "<rootDir>/../libs/migration-tracking/src/$1",
+    "@mtool/migration-tracking": "<rootDir>/../libs/migration-tracking/src",
+    "@mtool/migration-tracking-mongodb/(.*)": "<rootDir>/../libs/migration-tracking-mongodb/src/$1",
+    "@mtool/migration-tracking-mongodb": "<rootDir>/../libs/migration-tracking-mongodb/src",
+    "@mtool/migration-tool-common/(.*)": "<rootDir>/../libs/migration-tool-common/src/$1",
+    "@mtool/migration-tool-common": "<rootDir>/../libs/migration-tool-common/src",
+    "@mtool/migration-tracking-common/(.*)": "<rootDir>/../libs/migration-tracking-common/src/$1",
+    "@mtool/migration-tracking-common": "<rootDir>/../libs/migration-tracking-common/src",
+    "@mtool/migration-tool-config/(.*)": "<rootDir>/../libs/migration-tool-config/src/$1",
+    "@mtool/migration-tool-config": "<rootDir>/../libs/migration-tool-config/src",
+    "@mtool/migration-tool-config-consul/(.*)": "<rootDir>/../libs/migration-tool-config-consul/src/$1",
+    "@mtool/migration-tool-config-consul": "<rootDir>/../libs/migration-tool-config-consul/src",
+    "@mtool/migration-tool-config-vault/(.*)": "<rootDir>/../libs/migration-tool-config-vault/src/$1",
+    "@mtool/migration-tool-config-vault": "<rootDir>/../libs/migration-tool-config-vault/src",
+    "@mtool/migration-tool-utility/(.*)": "<rootDir>/../libs/migration-tool-utility/src/$1",
+    "@mtool/migration-tool-utility": "<rootDir>/../libs/migration-tool-utility/src"
+  }
+}

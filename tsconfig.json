@@ -1,0 +1,95 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@mtool/migration-tool-conductor": [
+        "libs/migration-tool-conductor/src"
+      ],
+      "@mtool/migration-tool-conductor/*": [
+        "libs/migration-tool-conductor/src/*"
+      ],
+      "@mtool/migration-tool-consul": [
+        "libs/migration-tool-consul/src"
+      ],
+      "@mtool/migration-tool-consul/*": [
+        "libs/migration-tool-consul/src/*"
+      ],
+      "@mtool/migration-tool-mongodb": [
+        "libs/migration-tool-mongodb/src"
+      ],
+      "@mtool/migration-tool-mongodb/*": [
+        "libs/migration-tool-mongodb/src/*"
+      ],
+      "@mtool/migration-tool-vault": [
+        "libs/migration-tool-vault/src"
+      ],
+      "@mtool/migration-tool-vault/*": [
+        "libs/migration-tool-vault/src/*"
+      ],
+      "@mtool/migration-tracking": [
+        "libs/migration-tracking/src"
+      ],
+      "@mtool/migration-tracking/*": [
+        "libs/migration-tracking/src/*"
+      ],
+      "@mtool/migration-tracking-mongodb": [
+        "libs/migration-tracking-mongodb/src"
+      ],
+      "@mtool/migration-tracking-mongodb/*": [
+        "libs/migration-tracking-mongodb/src/*"
+      ],
+      "@mtool/migration-tool-common": [
+        "libs/migration-tool-common/src"
+      ],
+      "@mtool/migration-tool-common/*": [
+        "libs/migration-tool-common/src/*"
+      ],
+      "@mtool/migration-tracking-common": [
+        "libs/migration-tracking-common/src"
+      ],
+      "@mtool/migration-tracking-common/*": [
+        "libs/migration-tracking-common/src/*"
+      ],
+      "@mtool/migration-tool-config": [
+        "libs/migration-tool-config/src"
+      ],
+      "@mtool/migration-tool-config/*": [
+        "libs/migration-tool-config/src/*"
+      ],
+      "@mtool/migration-tool-config-consul": [
+        "libs/migration-tool-config-consul/src"
+      ],
+      "@mtool/migration-tool-config-consul/*": [
+        "libs/migration-tool-config-consul/src/*"
+      ],
+      "@mtool/migration-tool-config-vault": [
+        "libs/migration-tool-config-vault/src"
+      ],
+      "@mtool/migration-tool-config-vault/*": [
+        "libs/migration-tool-config-vault/src/*"
+      ],
+      "@mtool/migration-tool-utility": [
+        "libs/migration-tool-utility/src"
+      ],
+      "@mtool/migration-tool-utility/*": [
+        "libs/migration-tool-utility/src/*"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+exports.default = {
+    <% props.modules.forEach(module => { %>
+        <%= module.name %>: {
+            enabled: true,
+            config: <%- include(`${module.name}-config.template.ejs`, module.defaultConfig) %>,
+        },
+    <% }); %>
+};
