@@ -9,7 +9,9 @@ describe('MigrationTrackingMongodbService', () => {
       providers: [MigrationTrackingMongodbService],
     }).compile();
 
-    service = module.get<MigrationTrackingMongodbService>(MigrationTrackingMongodbService);
+    service = module.get<MigrationTrackingMongodbService>(
+      MigrationTrackingMongodbService,
+    );
   });
 
   it('should be defined', () => {

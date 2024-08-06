@@ -9,7 +9,9 @@ describe('MigrationToolMongodbService', () => {
       providers: [MigrationToolMongodbService],
     }).compile();
 
-    service = module.get<MigrationToolMongodbService>(MigrationToolMongodbService);
+    service = module.get<MigrationToolMongodbService>(
+      MigrationToolMongodbService,
+    );
   });
 
   it('should be defined', () => {

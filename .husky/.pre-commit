@@ -1,0 +1,4 @@
+yarn audit
+yarn lint
+yarn lint:ejs
+yarn test:cov

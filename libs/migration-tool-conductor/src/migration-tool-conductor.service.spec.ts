@@ -9,7 +9,9 @@ describe('MigrationToolConductorService', () => {
       providers: [MigrationToolConductorService],
     }).compile();
 
-    service = module.get<MigrationToolConductorService>(MigrationToolConductorService);
+    service = module.get<MigrationToolConductorService>(
+      MigrationToolConductorService,
+    );
   });
 
   it('should be defined', () => {

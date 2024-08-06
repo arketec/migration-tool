@@ -9,8 +9,11 @@
   },
   "license": "MIT",
   "scripts": {
+    "audit": "npm audit",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
+    "postinstall": "husky || true",
+    "prepare": "husky || true",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -50,6 +53,7 @@
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^9.1.4",
     "jest": "^29.5.0",
     "mock-fs": "^5.2.0",
     "nest-commander-testing": "^3.3.0",
@@ -86,6 +90,14 @@
       "!**/**/index.ts"
     ],
     "coverageDirectory": "./coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
     "testEnvironment": "node",
     "roots": [
       "<rootDir>/src/",
@@ -100,9 +112,6 @@
       "^@mtool/migration-tracking-mongodb(|/.*)$": "<rootDir>/libs/migration-tracking-mongodb/src/$1",
       "^@mtool/migration-tool-common(|/.*)$": "<rootDir>/libs/migration-tool-common/src/$1",
       "^@mtool/migration-tracking-common(|/.*)$": "<rootDir>/libs/migration-tracking-common/src/$1",
-      "^@mtool/migration-tool-config(|/.*)$": "<rootDir>/libs/migration-tool-config/src/$1",
-      "^@mtool/migration-tool-config-consul(|/.*)$": "<rootDir>/libs/migration-tool-config-consul/src/$1",
-      "^@mtool/migration-tool-config-vault(|/.*)$": "<rootDir>/libs/migration-tool-config-vault/src/$1",
       "^@mtool/migration-tool-utility(|/.*)$": "<rootDir>/libs/migration-tool-utility/src/$1"
     }
   },

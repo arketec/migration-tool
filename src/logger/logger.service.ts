@@ -12,21 +12,39 @@ export class MigratorLoggerService
   implements LoggerService
 {
   log(message: any, ...optionalParams: any[]) {
-    console.log(chalk.green(message), optionalParams);
+    super.log(
+      chalk.green(message),
+      optionalParams.length ? optionalParams : undefined,
+    );
   }
   error(message: any, ...optionalParams: any[]) {
-    console.error(chalk.red(message), optionalParams);
+    super.error(
+      chalk.red(message),
+      optionalParams.length ? optionalParams : undefined,
+    );
   }
   warn(message: any, ...optionalParams: any[]) {
-    console.warn(chalk.yellow(message), optionalParams);
+    super.warn(
+      chalk.yellow(message),
+      optionalParams.length ? optionalParams : undefined,
+    );
   }
   debug(message: any, ...optionalParams: any[]) {
-    console.debug(chalk.blue(message), optionalParams);
+    super.debug(
+      chalk.blue(message),
+      optionalParams.length ? optionalParams : undefined,
+    );
   }
   verbose(message: any, ...optionalParams: any[]) {
-    console.log(chalk.cyan(message), optionalParams);
+    super.log(
+      chalk.cyan(message),
+      optionalParams.length ? optionalParams : undefined,
+    );
   }
   fatal(message: any, ...optionalParams: any[]) {
-    console.error(chalk.redBright(message), optionalParams);
+    super.error(
+      chalk.redBright(message),
+      optionalParams.length ? optionalParams : undefined,
+    );
   }
 }

@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { FilesystemModule } from '../../../../src/filesystem/filesystem.module';
 import {
   Filesystem,
   FILESYSTEM_SERVICE_TOKEN,
-  FilesystemService,
 } from '../../../../src/filesystem/filesystem.service';
 import { MigratorLoggerService } from '../../../../src/logger/logger.service';
 import { ScriptReaderJsModule } from '../script-reader-js/script-reader-js.module';
@@ -33,15 +33,10 @@ describe('ScriptReaderService', () => {
         ScriptReaderJsModule,
         ScriptReaderJsonModule,
         ScriptReaderTsModule,
+        FilesystemModule,
       ],
       providers: [
         ScriptReaderService,
-        {
-          provide: FilesystemService,
-          useValue: {
-            tryReadFile: fsMock.readFile,
-          },
-        },
         {
           provide: MigratorLoggerService,
           useValue: mockLogger,
@@ -88,5 +83,14 @@ describe('ScriptReaderService', () => {
     const result = await service.load('test.js');
     expect(result.up()).toEqual('test');
     expect(result.down).toBeNull();
+  });
+
+  it('should throw on unsupported extension', async () => {
+    await expect(service.load('test.txt')).rejects.toThrow();
+  });
+
+  it('should throw on read error', async () => {
+    jest.spyOn(fsMock, 'readFile').mockRejectedValue(new Error('test'));
+    await expect(service.load('test.json')).rejects.toThrow();
   });
 });

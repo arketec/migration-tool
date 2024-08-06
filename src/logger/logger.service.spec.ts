@@ -19,26 +19,44 @@ describe('MigratorLoggerService', () => {
   });
 
   it('should log', () => {
-    service.log('test');
+    service.log('log');
+  });
+  it('should log with additional args', () => {
+    service.log('log', 'additional');
   });
 
   it('should error', () => {
-    service.error('test');
+    service.error('error');
+  });
+  it('should error with additional args', () => {
+    service.error('error', 'additional');
   });
 
   it('should warn', () => {
-    service.warn('test');
+    service.warn('warn');
+  });
+  it('should warn with additional args', () => {
+    service.warn('warn', 'additional');
   });
 
   it('should debug', () => {
-    service.debug('test');
+    service.debug('debug');
+  });
+  it('should debug with additional args', () => {
+    service.debug('debug', 'additional');
   });
 
   it('should verbose', () => {
-    service.verbose('test');
+    service.verbose('verbose');
+  });
+  it('should verbose with additional args', () => {
+    service.verbose('verbose', 'additional');
   });
 
   it('should fatal', () => {
-    service.fatal('debug');
+    service.fatal('fatal');
+  });
+  it('should fatal with additional args', () => {
+    service.fatal('fatal', 'additional');
   });
 });

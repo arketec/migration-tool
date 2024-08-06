@@ -36,7 +36,7 @@ export class InitCommand extends CommandRunner {
     description: 'Modules to include in the config',
   })
   parseExcludes(value: string): string[] {
-    return value.split(/[,:\s]+/);
+    return value?.split(/[,:\s]+/).filter((v) => !!v) ?? [];
   }
   @Option({
     name: 'force',
@@ -86,6 +86,9 @@ export class InitCommand extends CommandRunner {
     this.logService.log('Initializing migration-tool project');
     await this.filesystemService.tryMkdir(`${curDir}/migrations`, (e) => {
       if (e.code !== 'EEXIST') {
+        this.logService.error(
+          'Failed to create migrations directory: ' + e.message,
+        );
         throw e;
       } else {
         this.logService.log('Migrations directory already exists');
@@ -107,6 +110,9 @@ export class InitCommand extends CommandRunner {
             `${curDir}/migrations/${module}`,
             (e) => {
               if (e.code !== 'EEXIST') {
+                this.logService.error(
+                  `Failed to create ${module} directory: ` + e.message,
+                );
                 throw e;
               } else {
                 this.logService.log(`${module} directory already exists`);
