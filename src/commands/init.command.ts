@@ -5,6 +5,7 @@ import { InitConductorDefaultConfigInitializer } from '../../libs/migration-tool
 import { InitConsulDefaultConfigInitializer } from '../../libs/migration-tool-consul/src/sub-commands/init-consul.command';
 import { InitMongoDbDefaultConfigInitializer } from '../../libs/migration-tool-mongodb/src/sub-commands/init-mongodb.command';
 import { InitVaultDefaultConfigInitializer } from '../../libs/migration-tool-vault/src/sub-commands/init-vault.command';
+import { InitTrackingDefaultConfigInitializer } from '../../libs/migration-tracking/src/sub-commands/init-tracking.command';
 import { FilesystemService } from '../filesystem/filesystem.service';
 import { MigratorLoggerService } from '../logger/logger.service';
 import { TemplatesService } from '../templates/templates.service';
@@ -72,15 +73,17 @@ export class InitCommand extends CommandRunner {
     };
     const props = {
       modules: [],
+      reporting: {},
     };
     const initializers: Record<
-      keyof typeof supportedModules,
+      keyof typeof supportedModules | 'reporting',
       IDefaultConfigurationInitializer
     > = {
       conductor: new InitConductorDefaultConfigInitializer(this.logService),
       consul: new InitConsulDefaultConfigInitializer(this.logService),
       mongodb: new InitMongoDbDefaultConfigInitializer(this.logService),
       vault: new InitVaultDefaultConfigInitializer(this.logService),
+      reporting: new InitTrackingDefaultConfigInitializer(this.logService),
     };
 
     this.logService.log('Initializing migration-tool project');
@@ -124,6 +127,14 @@ export class InitCommand extends CommandRunner {
         }
       }),
     );
+
+    this.logService.log(`Adding reporting`);
+    templateConfig.views.push(`${ROOT}/libs/migration-tracking/templates`);
+    const reportingConfig = await initializers.reporting.defaultConfig();
+    props.reporting = {
+      enabled: true,
+      defaultConfig: reportingConfig,
+    };
 
     const renderedConfig = await this.templatesService.tryRenderFile(
       './templates/config.template.ejs',

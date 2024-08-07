@@ -6,17 +6,7 @@ exports.default = {
         },
     <% }); %>
     reporting: {
-        enabled: false,
-        config: {
-            database: {
-                connectionString: 'mongodb://localhost:27017',
-                database: 'reporting',
-                collections: {
-                    <% props.modules.forEach(module => { %>
-                        <%= module.name %>: '<%= module.name %>',
-                    <% }); %>
-                }
-            }
-        }
+        enabled: <%= props.reporting.enabled %>,
+        config: <%- include(`reporting-config.template.ejs`, props.reporting.defaultConfig) %>,
     }
 };
