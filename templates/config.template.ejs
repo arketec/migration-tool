@@ -5,4 +5,18 @@ exports.default = {
             config: <%- include(`${module.name}-config.template.ejs`, module.defaultConfig) %>,
         },
     <% }); %>
+    reporting: {
+        enabled: false,
+        config: {
+            database: {
+                connectionString: 'mongodb://localhost:27017',
+                database: 'reporting',
+                collections: {
+                    <% props.modules.forEach(module => { %>
+                        <%= module.name %>: '<%= module.name %>',
+                    <% }); %>
+                }
+            }
+        }
+    }
 };

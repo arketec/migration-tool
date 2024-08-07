@@ -1,0 +1,19 @@
+{
+  "name": "@mtool/migration-tracking-common",
+  "version": "0.1.0",
+  "description": "Common library for migration tracking",
+  "author": {
+    "name": "Noah Maughan",
+    "email": "noah.maughan@gmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.lib.json",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "prepublish": "tsc -p tsconfig.publish.json",
+    "publish": "npm publish"
+  },
+  "main": "dist/index.js"
+}
